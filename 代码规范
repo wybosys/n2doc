@@ -1,0 +1,36 @@
+N2代码规范
+
+此次N2重构是为了解决第一版中在处理C++、Objc等语言是存在的细节暴漏所导致的代码混乱的问题，所以此次代码规范将以C++规范为基础，并尽可能对其他语言进行兼容。
+
+样式示例：
+namespace nn
+{
+        class Test
+        {
+        public:
+                typedef other Type;
+                void runTest()
+                {
+                        _runTest();
+                }
+                int myValue;
+        private:
+                void _runTest()
+                {
+                }
+        }
+        void GlobalRunTest() {}
+}
+#define GLOBAL_DEFINE 1
+typedef enum {
+kEnum1, 
+} Enum;
+
+上述代码遵循的规则：
+1，名域为全小写
+2，类名采用大驼峰法
+3，成员函数、变量、类型定义采用小驼峰法
+4，保护、私有成员前需要增加_下划线
+5，全局函数、变量等采用大驼峰法
+6，define等紧挨控制符#，并采用全大写下划线方式的写法
+7，枚举和const变量采用k开头的大驼峰法写法
