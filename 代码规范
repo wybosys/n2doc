@@ -14,12 +14,24 @@ namespace nn
                         _runTest();
                 }
                 int myValue;
+
+		void setValue(int v) {}
+		int getValue() const { return 0; }
+
+		void value(int v) {}
+		int value() const { return 1; }
+
+		enum {
+		Unknown,
+		} type;
+
         private:
                 void _runTest()
                 {
                 }
         }
-        void GlobalRunTest() {}
+ 
+	static void GlobalRunTest() {}
 }
 #define GLOBAL_DEFINE 1
 typedef enum {
@@ -33,4 +45,6 @@ kEnum1,
 4，保护、私有成员前需要增加_下划线
 5，全局函数、变量等采用大驼峰法
 6，define等紧挨控制符#，并采用全大写下划线方式的写法
-7，枚举和const变量采用k开头的大驼峰法写法
+7，枚举和const变量采用k开头的大驼峰法写法(内部定义可以不采用此标准)
+8，property可选采用get/set的前缀
+
